@@ -1,2 +1,2 @@
 # photoConvRemake
-Utility for transforming your jpeg photos into ASCll art
+Utility for transforming your jpg photos into ASCll art
