@@ -1,0 +1,16 @@
+# dirs
+build/
+bin/
+out/
+
+# compiled 
+*.o
+*.out
+*.app
+main
+photoConvRemake
+
+# system stuff macOS
+.DS_Store
+.AppleDouble
+.LSOverride
