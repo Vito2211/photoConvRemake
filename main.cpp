@@ -1,13 +1,10 @@
 #include <iostream>
 #include <fcntl.h> 
 #include <unistd.h>
-#include <cstdint>
+
+#include "jpeg_parser.h"
 
 using namespace std;
-
-
-uint16_t read_segment(int fd);
-void skip_segment(int fd);
 
 int main(int argv, char** argc) {
 
@@ -37,18 +34,4 @@ int main(int argv, char** argc) {
     return 0;
 }
 
-uint16_t read_segment(int fd) {
-    uint8_t bit1 = 0;
-    uint8_t bit2 = 0;
 
-    if (read(fd, &bit1, 1) < 1 || read(fd, &bit2, 1) < 1) return 0;
-    
-    return bit1 << 8 | bit2;
-}
-
-void skip_segment(int fd) {
-    uint16_t length = read_segment(fd);
-    if(length > 2) {
-        lseek(fd, length - 2, SEEK_CUR);
-    }
-}
